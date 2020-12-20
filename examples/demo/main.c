@@ -1,7 +1,6 @@
 #include <pigpio.h>
+#include <pilcd.h>
 #include <stdio.h>
-
-#include "lcd.h"
 
 #define PIN_LED 21
 

@@ -1,4 +1,4 @@
-#include "lcd.h"
+#include "pilcd.h"
 
 #include <pigpio.h>
 #include <stdarg.h>
