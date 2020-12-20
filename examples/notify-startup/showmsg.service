@@ -1,0 +1,11 @@
+[Unit]
+Description="Show a message on a LCD"
+After=sshd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/lcd-showmsg
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

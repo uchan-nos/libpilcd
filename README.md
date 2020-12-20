@@ -77,3 +77,18 @@ main.c に記述されたピン番号（`PIN_hoge`）をお手元の環境に合
 
     make
     sudo ./pilcd
+
+## examples の紹介
+
+examples ディレクトリには libpilcd を利用した例を収録しています。
+
+### notify-startup
+
+Raspberry Pi OS の起動時に LCD に起動時刻を表示します。
+自動起動には Systemd の仕組みを使います。
+
+    make
+    sudo make install
+
+`make install` によって /etc/systemd/system/lcd-showmsg.service に Systemd 用のユニットファイルが配置され、自動起動が有効化されます。
+Raspberry Pi を再起動すると LCD に "System started  12/20 11:08:27" などとメッセージが出ます。
