@@ -1,4 +1,4 @@
-# libpilcd
+# pilcd
 
 Raspberry Pi 向けの SC1602 液晶表示器（LCD）のライブラリです。
 [pigpio](http://abyz.me.uk/rpi/pigpio/) を利用し、C 言語で実装してあります。
@@ -7,7 +7,12 @@ Raspberry Pi 向けの SC1602 液晶表示器（LCD）のライブラリです�
 
 ## 使い方
 
-まず pigpio と libpilcd を初期化します。
+まず `<pigpio.h>` と `<pilcd.h>` をインクルードします。
+
+    #include <pigpio.h>
+    #include <pilcd.h>
+
+次に pigpio と pilcd を初期化します。
 
     int main() {
       if (gpioInitialise() < 0) {
@@ -61,7 +66,7 @@ Raspberry Pi の GPIO のピン配置は [GPIO - Raspberry Pi Documentation](htt
 
 ## コントラスト制御
 
-LCD の Vo ピンの制御は libpilcd の範囲外ですから、自由に制御してください。
+LCD の Vo ピンの制御は pilcd の範囲外ですから、自由に制御してください。
 GND に接続しておけば最もコントラストが高い状態になります。
 
 LCD の Vo ピンを GPIO に接続し、PWM を用いてコントラストを調整する例を示します。
@@ -73,16 +78,22 @@ uchan による実験では 80 程度を設定することで背景色がちょ�
 
 ## その他の機能
 
-main.c にサンプルとなる実装があります。
-main.c に記述されたピン番号（`PIN_hoge`）をお手元の環境に合わせて変更してからビルドすると実験可能です。
+examples/demo/main.c にサンプルとなる実装があります。
+main.c に記述されたピン番号（`PIN_hoge`）を手元の環境に合わせて変更してからビルドすると実験可能です。
 ビルドは `make` 一発です。
 
     make
-    sudo ./pilcd
+    sudo ./demo
 
 ## examples の紹介
 
-examples ディレクトリには libpilcd を利用した例を収録しています。
+examples ディレクトリには pilcd を利用した例を収録しています。
+
+### demo
+
+pilcd ライブラリの各機能を試すためのデモアプリです。
+
+デモ動画: [![pilcdライブラリのデモ](./docs/pilcd-demo.jpg)](https://www.youtube.com/watch?v=d6Xc37s59wQ)
 
 ### notify-startup
 
