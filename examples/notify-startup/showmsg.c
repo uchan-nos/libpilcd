@@ -1,5 +1,5 @@
-#include <lcd.h>
 #include <pigpio.h>
+#include <pilcd.h>
 #include <time.h>
 
 int main() {
