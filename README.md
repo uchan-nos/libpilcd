@@ -3,6 +3,8 @@
 Raspberry Pi 向けの SC1602 液晶表示器（LCD）のライブラリです。
 [pigpio](http://abyz.me.uk/rpi/pigpio/) を利用し、C 言語で実装してあります。
 
+![LCD を表示した様子](./docs/notify-startup.jpg)
+
 ## 使い方
 
 まず pigpio と libpilcd を初期化します。
